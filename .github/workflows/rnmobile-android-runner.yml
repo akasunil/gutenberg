@@ -45,7 +45,7 @@ jobs:
               uses: ./.github/setup-node
 
             - name: Restore tests setup cache
-              uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
+              uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5.0.4
               with:
                   path: |
                       ~/.appium
@@ -60,7 +60,7 @@ jobs:
             # AVD cache disabled as it caused emulator termination to hang indefinitely.
             # https://github.com/ReactiveCircus/android-emulator-runner/issues/385
             # - name: AVD cache
-            #   uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
+            #   uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5.0.4
             #   id: avd-cache
             #   with:
             #       path: |
@@ -93,13 +93,13 @@ jobs:
                   profile: Nexus 6
                   script: npm run native test:e2e:android:local "$NATIVE_TEST_NAME"
 
-            - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+            - uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
               if: always()
               with:
                   name: android-screen-recordings
                   path: packages/react-native-editor/android-screen-recordings
 
-            - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+            - uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
               if: always()
               with:
                   name: appium-logs
